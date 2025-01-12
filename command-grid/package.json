@@ -3,10 +3,10 @@
     "displayName": "Command Grid",
     "description": "Create a grid of customizable command buttons",
     "version": "0.0.1",
-    "publisher": "YourGitHubUsername",
+    "publisher": "rorocabrera",
     "repository": {
         "type": "git",
-        "url": "https://github.com/YourGitHubUsername/command-grid.git"
+        "url": "https://github.com/rorocabrera/command-grid.git"
     },
     "engines": {
         "vscode": "^1.80.0"
@@ -19,6 +19,13 @@
     ],
     "main": "./extension.js",
     "contributes": {
+        "keybindings": [
+            {
+                "command": "command-grid.showPanel",
+                "key": "ctrl+alt+g",
+                "mac": "cmd+alt+g"
+            }
+        ],
         "commands": [
             {
                 "command": "command-grid.showPanel",
