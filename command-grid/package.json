@@ -1,0 +1,65 @@
+{
+    "name": "command-grid",
+    "displayName": "Command Grid",
+    "description": "Create a grid of customizable command buttons",
+    "version": "0.0.1",
+    "publisher": "YourGitHubUsername",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/YourGitHubUsername/command-grid.git"
+    },
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:command-grid.showPanel"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "command-grid.showPanel",
+                "title": "Show Command Grid"
+            }
+        ],
+        "configuration": {
+            "title": "Command Grid",
+            "properties": {
+                "commandGrid.buttons": {
+                    "type": "array",
+                    "default": [],
+                    "description": "Array of button configurations",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "label": {
+                                "type": "string",
+                                "description": "Button label"
+                            },
+                            "command": {
+                                "type": "string",
+                                "description": "Command to execute"
+                            },
+                            "color": {
+                                "type": "string",
+                                "description": "Button color (optional)",
+                                "default": "#007acc"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "scripts": {
+        "package": "vsce package",
+        "publish": "vsce publish"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.80.0",
+        "vsce": "^2.15.0"
+    }
+}
